@@ -182,13 +182,13 @@ class Chain:
         found = False
 
         while not found:
+            found = True
             for edge in self.edges:
                 if line.is_perpendicular(edge.segment):
                     angle -= 10e-2
                     line = Line(point, slope=angle)
                     found = False
                     break
-                found = True
 
         return line
 
