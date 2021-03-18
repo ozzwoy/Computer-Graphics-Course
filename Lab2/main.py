@@ -179,17 +179,16 @@ class Chain:
         point = Point(1000, 0)
         angle = pi/2
         line = Line(point, Point(1000, 1000))
-        found = True
+        found = False
 
-        while True:
+        while not found:
             for edge in self.edges:
                 if line.is_perpendicular(edge.segment):
                     angle -= 10e-2
                     line = Line(point, slope=angle)
                     found = False
                     break
-            if found:
-                break
+                found = True
 
         return line
 
